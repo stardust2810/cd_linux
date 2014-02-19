@@ -18,17 +18,14 @@
             <arg value="site.Bootstrap"/>
         </exec>
         <sleep seconds="1"/>
-        <java classname="site.Bootstrap" classpathref="class.path" fork="true">
+        <java classname="site.Bootstrap" classpathref="class.path" fork="true" spawn="true">
             <classpath>
                 <pathelement location="classes/"/>
             </classpath>
         </java>
         <sleep seconds="2"/>
     </target>
-    <target depends="compile" name="test">
-      <fail/>
-
-      <!--
+    <target depends="compile" name="test">      
       <junit printsummary="yes" haltonfailure="yes">
         <classpath refid="class.path"/>
         <classpath>
@@ -37,6 +34,6 @@
         <formatter type="plain" usefile="false"/>
         <test name="site.BootstrapTest"/>
       </junit>
-      -->
+      
     </target>
 </project>
