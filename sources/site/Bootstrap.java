@@ -17,7 +17,7 @@ class Bootstrap {
             public void handle(String target, Request baseRequest,
                 HttpServletRequest request, HttpServletResponse response)
                 throws IOException, ServletException {
-                if (target.startsWith("/time")) {
+                if (target.startsWith("/datetime")) {
                     response.setHeader("Content-Type", "text/html");
                     response.getWriter().write("<p>" + new Date());
                     baseRequest.setHandled(true);
